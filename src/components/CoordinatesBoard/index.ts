@@ -1,0 +1,1 @@
+export { CoordinatesBoard } from './CoordinatesBoard';
