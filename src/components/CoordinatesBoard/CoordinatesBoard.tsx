@@ -11,8 +11,6 @@ const nodeTypes = {
 
 const initialNodes = Store.map((item, i) => storeToBoard(i.toString(), item));
 
-console.log(initialNodes.map(({ position, data }) => [position, data]));
-
 export const CoordinatesBoard: React.FC = () => {
 	const [nodes, _, onNodesChange] = useNodesState(initialNodes);
 

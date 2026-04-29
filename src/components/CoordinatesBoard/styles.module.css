@@ -1,8 +1,5 @@
 .coordinates_board {
-	margin: auto;
-
-	height: 100%;
-	width: 100%;
-
-	aspect-ratio: 1 / 1;
+	height: 800px;
+	width: 800px;
+	border: 1px solid #e5e7eb;
 }
