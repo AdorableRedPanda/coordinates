@@ -1,7 +1,7 @@
 import type React from 'react';
 import css from './styles.module.css';
 import { Background, MiniMap, ReactFlow, useNodesState } from '@xyflow/react';
-import { AvatarNode } from '@/components';
+import { AvatarNode } from '../AvatarNode';
 import { Store } from '@/constants';
 import { storeToBoard } from '@/utils';
 

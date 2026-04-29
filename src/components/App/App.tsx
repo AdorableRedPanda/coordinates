@@ -1,8 +1,8 @@
-import '@xyflow/react/dist/style.css';
-import { CoordinatesBoard } from './components';
-import css from './App.module.css';
+import { CoordinatesBoard } from '../CoordinatesBoard';
 
-function App() {
+import css from './styles.module.css';
+
+export function App() {
 	return (
 		<div className={css.app}>
 			<header className={css.header}>coordinates</header>
@@ -12,5 +12,3 @@ function App() {
 		</div>
 	);
 }
-
-export default App;

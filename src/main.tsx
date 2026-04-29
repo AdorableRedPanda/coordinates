@@ -1,7 +1,10 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
-import './reset.css';
-import App from './App';
+
+import { App } from '@/components';
+
+import './index.css';
+import '@xyflow/react/dist/style.css';
 
 const root = document.getElementById('root') as HTMLElement;
 

@@ -1,5 +1,5 @@
 .coordinates_board {
 	height: 800px;
 	width: 800px;
-	border: 1px solid #e5e7eb;
+	background-color: var(--light-1);
 }
