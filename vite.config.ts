@@ -11,6 +11,7 @@ export default defineConfig({
       '@/components': resolve(__dirname, 'src/components'),
       '@/constants': resolve(__dirname, 'src/constants'),
       '@/utils': resolve(__dirname, 'src/utils'),
+      '@/hooks': resolve(__dirname, 'src/hooks'),
     },
   },
   server: { port: 9291, open: true },
