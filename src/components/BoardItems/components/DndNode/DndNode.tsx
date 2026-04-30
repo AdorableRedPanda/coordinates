@@ -13,7 +13,7 @@ interface Props extends React.PropsWithChildren {
 export const DndNode: React.FC<Props> = ({ children, position, onStop }) => {
 	const nodeRef = useRef<HTMLDivElement>(null);
 
-	const onDragStop: DraggableEventHandler = (_, data) => onStop(data);
+	const onDragStop: DraggableEventHandler = (_, { x, y }) => onStop({ x, y });
 
 	return (
 		<Draggable

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import {useEffect, useRef, useState} from 'react';
 import type { ID, ItemsStore, Position } from '@/types';
 
 type UpdateCb = (key: ID, position: Position) => void;
@@ -11,3 +11,20 @@ export const useStore = (initial: ItemsStore) => {
 
 	return { state, onChange };
 };
+
+
+export const useLogState = <T>(state: T) => {
+	const timer = useRef<number>(null);
+
+	const log = () => {
+		console.clear();
+		console.log(state);
+	}
+
+	useEffect(() => {
+		if (timer.current) { window.clearTimeout(timer.current) }
+		timer.current = window.setTimeout(log, 1000);
+
+
+	}, [state])
+}
