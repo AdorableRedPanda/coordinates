@@ -4,7 +4,6 @@ import { createRoot } from 'react-dom/client';
 import { App } from '@/components';
 
 import './index.css';
-import '@xyflow/react/dist/style.css';
 
 const root = document.getElementById('root') as HTMLElement;
 

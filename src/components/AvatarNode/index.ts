@@ -1,1 +1,0 @@
-export { AvatarNode } from './AvatarNode';

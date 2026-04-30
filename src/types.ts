@@ -10,11 +10,9 @@ export interface Position {
 
 export type ID = string;
 
-export interface BoardNode {
-	data: ItemData;
+export interface BoardPoint<TData> {
 	position: Position;
-	id: ID;
-	type: 'node';
+	data: TData;
 }
 
-export type StoreItem = [Position, ItemData];
+export type ItemsStore = Record<ID, BoardPoint<ItemData>>;
