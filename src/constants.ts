@@ -93,3 +93,5 @@ export const Store: ItemsStore = {
 		},
 	},
 };
+
+export const STORAGE_LS_KEY = '0.1.0_STORAGE_ITEMS';

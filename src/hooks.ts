@@ -1,9 +1,10 @@
-import {useEffect, useRef, useState} from 'react';
+import { useEffect, useRef, useState } from 'react';
 import type { ID, ItemsStore, Position } from '@/types';
+import { STORAGE_LS_KEY } from '@/constants';
 
 type UpdateCb = (key: ID, position: Position) => void;
 
-export const useStore = (initial: ItemsStore) => {
+export const useStore = (initial: () => ItemsStore) => {
 	const [state, setState] = useState<ItemsStore>(initial);
 
 	const onChange: UpdateCb = (key, position) =>
@@ -12,19 +13,24 @@ export const useStore = (initial: ItemsStore) => {
 	return { state, onChange };
 };
 
-
-export const useLogState = <T>(state: T) => {
+export const useWithLS = <T>(state: T) => {
 	const timer = useRef<number>(null);
 
-	const log = () => {
-		console.clear();
-		console.log(state);
-	}
+	const save = () => {
+		if (timer.current) {
+			window.clearTimeout(timer.current);
+		}
+
+		setTimeout(
+			() => window.localStorage.setItem(STORAGE_LS_KEY, JSON.stringify(state)),
+			100,
+		);
+	};
 
 	useEffect(() => {
-		if (timer.current) { window.clearTimeout(timer.current) }
-		timer.current = window.setTimeout(log, 1000);
-
-
-	}, [state])
-}
+		if (timer.current) {
+			window.clearTimeout(timer.current);
+		}
+		timer.current = window.setTimeout(save, 1000);
+	}, [state]);
+};
