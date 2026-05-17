@@ -4,7 +4,7 @@ import { CoordinatesBoard } from './CoordinatesBoard';
 import { Layout } from './Layout';
 import { BoardItems } from './BoardItems';
 
-const COLLECTION = import.meta.env.VITE_DEFAULT_COLLECTION as string;
+const COLLECTION: string = import.meta.env.VITE_DEFAULT_COLLECTION
 
 export function App() {
 	const { loading, items, onChange } = useInstantDb(COLLECTION);
