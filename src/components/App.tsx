@@ -10,7 +10,7 @@ export function App() {
 	const { loading, items, onChange } = useInstantDb(COLLECTION);
 
 	if (loading) {
-		return null;
+		return 'Loading...';
 	}
 
 	return (
