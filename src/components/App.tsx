@@ -1,36 +1,22 @@
-import { CoordinatesBoard } from './CoordinatesBoard';
+import { useInstantDb } from '@/db';
 
-import { STORAGE_LS_KEY, Store } from '@/constants';
+import { CoordinatesBoard } from './CoordinatesBoard';
 import { Layout } from './Layout';
 import { BoardItems } from './BoardItems';
 
-import { useWithLS, useStore } from '@/hooks';
-
-const loadStore = <TValue,>(defaultValue: TValue): TValue => {
-	const ls = window.localStorage.getItem(STORAGE_LS_KEY);
-
-	if (!ls) {
-		return defaultValue;
-	}
-
-	try {
-		return JSON.parse(ls);
-	} catch (e) {
-		console.error('Failed to parse localStorage', e);
-	}
-
-	return defaultValue;
-};
+const COLLECTION = import.meta.env.VITE_DEFAULT_COLLECTION as string;
 
 export function App() {
-	const { state, onChange } = useStore(() => loadStore(Store));
+	const { loading, items, onChange } = useInstantDb(COLLECTION);
 
-	useWithLS(state);
+	if (loading) {
+		return null;
+	}
 
 	return (
 		<Layout>
 			<CoordinatesBoard>
-				<BoardItems onUpdate={onChange} items={state} />
+				<BoardItems onUpdate={onChange} items={items} />
 			</CoordinatesBoard>
 		</Layout>
 	);

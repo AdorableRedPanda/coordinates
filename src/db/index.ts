@@ -1,0 +1,1 @@
+export { useInstantDb } from './useInstantDb';

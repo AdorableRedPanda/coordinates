@@ -1,4 +1,4 @@
-export interface ItemData extends Record<string, string> {
+export interface ItemData {
 	label: string;
 	img: string;
 }
@@ -10,9 +10,6 @@ export interface Position {
 
 export type ID = string;
 
-export interface BoardPoint<TData> {
-	position: Position;
-	data: TData;
+export interface StoreItem extends Position, ItemData {
+	id: ID;
 }
-
-export type ItemsStore = Record<ID, BoardPoint<ItemData>>;
