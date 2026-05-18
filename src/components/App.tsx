@@ -1,13 +1,20 @@
 import { useInstantDb } from '@/db';
+import { useSearchParams } from 'react-router-dom';
 
 import { CoordinatesBoard } from './CoordinatesBoard';
 import { Layout } from './Layout';
 import { BoardItems } from './BoardItems';
 
-const COLLECTION: string = import.meta.env.VITE_DEFAULT_COLLECTION
+const DEFAULT_COLLECTION: string = import.meta.env.VITE_DEFAULT_COLLECTION
+
+const useRoomParam = () => {
+	const [searchParams] = useSearchParams();
+	return searchParams.get('room') ?? DEFAULT_COLLECTION;
+}
 
 export function App() {
-	const { loading, items, onChange } = useInstantDb(COLLECTION);
+	const collection = useRoomParam()
+	const { loading, items, onChange } = useInstantDb(collection);
 
 	if (loading) {
 		return 'Loading...';
