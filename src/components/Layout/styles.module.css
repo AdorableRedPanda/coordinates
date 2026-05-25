@@ -10,9 +10,25 @@
 	padding: 0 20px;
 	height: 52px;
 	display: flex;
+	justify-content: space-between;
 	align-items: center;
 	color: var(--light-2);
 	background: var(--dark-1);
+
+	.new_button {
+		padding: 6px 16px;
+		border-radius: 6px;
+		border: none;
+		background: var(--blue-2);
+		color: var(--white);
+		cursor: pointer;
+		font-size: 14px;
+		font-weight: 500;
+
+		&:hover {
+			background: var(--blue-3);
+		}
+	}
 }
 
 .main {

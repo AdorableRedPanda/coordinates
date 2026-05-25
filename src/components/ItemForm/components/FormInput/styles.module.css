@@ -1,0 +1,30 @@
+.field {
+	display: flex;
+	flex-direction: column;
+	gap: 6px;
+	font-size: 13px;
+	color: var(--light-1);
+
+	width: 100%;
+
+	.input {
+		background: var(--dark-1);
+		border: 1px solid rgba(255, 255, 255, 0.12);
+		border-radius: 6px;
+		padding: 8px 12px;
+		font-size: 14px;
+		color: var(--light-1);
+		outline: none;
+		transition: border-color 0.15s ease;
+
+		width: 100%;
+
+		&:focus {
+			border-color: var(--blue-2);
+		}
+
+		&::placeholder {
+			color: var(--light-3);
+		}
+	}
+}

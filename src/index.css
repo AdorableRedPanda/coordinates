@@ -16,9 +16,13 @@ body,
 }
 
 :root {
+	--white: white;
 	--light-1: rgba(255, 255, 255, 0.75);
 	--light-2: #f1f5fa;
+	--light-3: rgba(255, 255, 255, 0.4);
 	--blue-1: rgba(47, 127, 239, 0.1);
+	--blue-2: #2f7fef;
+	--blue-3: #1a6edf;
 	--dark-1: #2d3a55;
 	--dark-2: #354761;
 }

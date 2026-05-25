@@ -1,0 +1,55 @@
+.overlay {
+	position: fixed;
+	inset: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: rgba(0, 0, 0, 0.45);
+	backdrop-filter: blur(6px);
+	z-index: 100;
+	opacity: 0;
+	transition: opacity 0.2s ease;
+
+	pointer-events: none;
+
+	.dialog {
+		background: var(--dark-2);
+		border-radius: 12px;
+		padding: 28px 32px;
+		width: 360px;
+		display: flex;
+		flex-direction: column;
+		gap: 20px;
+		transform: scale(0.95) translateY(-10px);
+		transition: transform 0.2s ease;
+
+		.title {
+			margin: 0;
+			font-size: 18px;
+			font-weight: 600;
+			color: var(--light-2);
+		}
+
+		.form {
+			display: flex;
+			flex-direction: column;
+			gap: 16px;
+		}
+
+		.coordinates {
+			width: 100%;
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			gap: 12px;
+		}
+	}
+
+	&.visible {
+		opacity: 1;
+		pointer-events: all;
+
+		.dialog {
+			transform: scale(1) translateY(0);
+		}
+	}
+}

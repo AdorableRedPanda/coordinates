@@ -24,7 +24,7 @@
 		left: 50%;
 		transform: translateX(-50%);
 		background: var(--dark-1);
-		color: #fff;
+		color: var(--white);
 		font-size: 12px;
 		white-space: nowrap;
 		padding: 3px 8px;

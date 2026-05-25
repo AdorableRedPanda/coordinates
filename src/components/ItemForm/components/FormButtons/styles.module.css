@@ -1,0 +1,44 @@
+.form_buttons {
+	display: flex;
+	justify-content: flex-end;
+	gap: 10px;
+	margin-top: 4px;
+
+	.cancel {
+		padding: 8px 16px;
+		border-radius: 6px;
+		border: 1px solid rgba(255, 255, 255, 0.15);
+		background: transparent;
+		color: var(--light-1);
+		cursor: pointer;
+		font-size: 14px;
+		transition: background 0.15s ease;
+
+		&:hover {
+			background: rgba(255, 255, 255, 0.08);
+		}
+	}
+
+	.submit {
+		padding: 8px 20px;
+		border-radius: 6px;
+		border: none;
+		background: var(--blue-2);
+		color: var(--white);
+		cursor: pointer;
+		font-size: 14px;
+		font-weight: 500;
+		transition:
+			background 0.15s ease,
+			opacity 0.15s ease;
+
+		&:hover:not(:disabled) {
+			background: var(--blue-3);
+		}
+
+		&:disabled {
+			opacity: 0.5;
+			cursor: default;
+		}
+	}
+}

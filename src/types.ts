@@ -10,6 +10,8 @@ export interface Position {
 
 export type ID = string;
 
+export type ItemCreatePayload = Position & ItemData;
+
 export interface StoreItem extends Position, ItemData {
 	id: ID;
 }
